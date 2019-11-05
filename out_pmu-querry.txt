@@ -1,0 +1,320 @@
+root@isslab-desktop:/home/hodongkim/pcm-master# ./pmu-query.py 
+IBRS and IBPB supported  : yes
+STIBP supported          : yes
+Spec arch caps supported : no
+Number of physical cores: 8
+Number of logical cores: 16
+Number of online logical cores: 16
+Threads (logical cores) per physical core: 2
+Num sockets: 1
+Physical cores per socket: 8
+Core PMU (perfmon) version: 3
+Number of core PMU generic (programmable) counters: 4
+Width of generic (programmable) counters: 48 bits
+Number of core PMU fixed counters: 3
+Width of fixed counters: 48 bits
+Nominal core frequency: 2100000000 Hz
+IBRS enabled in the kernel   : no
+STIBP enabled in the kernel  : no
+Package thermal spec power: 85 Watt; Package minimum power: 44 Watt; Package maximum power: 170 Watt; 
+Socket 0: 2 memory controllers detected with total number of 5 channels. 0 QPI ports detected. 0 M2M (mesh to memory) blocks detected.
+
+ Processor Counter Monitor: Core Monitoring Utility 
+
+Cleaning up
+ Zeroed uncore PMU registers
+ Freeing up all RMIDs
+{'Family-model': 'GenuineIntel-6-4F', 'EventType': 'core', 'Version': 'V14', 'Filename': '/BDX/broadwellx_core_v14.json'}
+{'Family-model': 'GenuineIntel-6-4F', 'EventType': 'offcore', 'Version': 'V14', 'Filename': '/BDX/broadwellx_matrix_v14.json'}
+{'Family-model': 'GenuineIntel-6-4F', 'EventType': 'uncore', 'Version': 'V14', 'Filename': '/BDX/broadwellx_uncore_v14.json'}
+Event to query (empty enter to quit):uncore
+
+
+Event to query (empty enter to quit):offcore
+OFFCORE_REQUESTS_OUTSTANDING.DEMAND_DATA_RD:Offcore outstanding Demand Data Read transactions in uncore queue.
+cpu/umask=0x01,event=0x60,name=OFFCORE_REQUESTS_OUTSTANDING.DEMAND_DATA_RD/
+OFFCORE_REQUESTS_OUTSTANDING.CYCLES_WITH_DEMAND_DATA_RD:Cycles when offcore outstanding Demand Data Read transactions are present in SuperQueue (SQ), queue to uncore
+cpu/umask=0x01,event=0x60,name=OFFCORE_REQUESTS_OUTSTANDING.CYCLES_WITH_DEMAND_DATA_RD,cmask=1/
+OFFCORE_REQUESTS_OUTSTANDING.DEMAND_DATA_RD_GE_6:Cycles with at least 6 offcore outstanding Demand Data Read transactions in uncore queue.
+cpu/umask=0x01,event=0x60,name=OFFCORE_REQUESTS_OUTSTANDING.DEMAND_DATA_RD_GE_6,offcore_rsp=0x00,cmask=6/
+OFFCORE_REQUESTS_OUTSTANDING.DEMAND_CODE_RD:Offcore outstanding code reads transactions in SuperQueue (SQ), queue to uncore, every cycle
+cpu/umask=0x02,event=0x60,name=OFFCORE_REQUESTS_OUTSTANDING.DEMAND_CODE_RD/
+OFFCORE_REQUESTS_OUTSTANDING.DEMAND_RFO:Offcore outstanding RFO store transactions in SuperQueue (SQ), queue to uncore
+cpu/umask=0x04,event=0x60,name=OFFCORE_REQUESTS_OUTSTANDING.DEMAND_RFO/
+OFFCORE_REQUESTS_OUTSTANDING.CYCLES_WITH_DEMAND_RFO:Offcore outstanding demand rfo reads transactions in SuperQueue (SQ), queue to uncore, every cycle
+cpu/umask=0x04,event=0x60,name=OFFCORE_REQUESTS_OUTSTANDING.CYCLES_WITH_DEMAND_RFO,cmask=1/
+OFFCORE_REQUESTS_OUTSTANDING.ALL_DATA_RD:Offcore outstanding cacheable Core Data Read transactions in SuperQueue (SQ), queue to uncore
+cpu/umask=0x08,event=0x60,name=OFFCORE_REQUESTS_OUTSTANDING.ALL_DATA_RD/
+OFFCORE_REQUESTS_OUTSTANDING.CYCLES_WITH_DATA_RD:Cycles when offcore outstanding cacheable Core Data Read transactions are present in SuperQueue (SQ), queue to uncore
+cpu/umask=0x08,event=0x60,name=OFFCORE_REQUESTS_OUTSTANDING.CYCLES_WITH_DATA_RD,cmask=1/
+OFFCORE_REQUESTS.DEMAND_DATA_RD:Demand Data Read requests sent to uncore
+cpu/umask=0x01,event=0xB0,name=OFFCORE_REQUESTS.DEMAND_DATA_RD/
+OFFCORE_REQUESTS.DEMAND_CODE_RD:Cacheable and noncachaeble code read requests
+cpu/umask=0x02,event=0xB0,name=OFFCORE_REQUESTS.DEMAND_CODE_RD/
+OFFCORE_REQUESTS.DEMAND_RFO:Demand RFO requests including regular RFOs, locks, ItoM
+cpu/umask=0x04,event=0xB0,name=OFFCORE_REQUESTS.DEMAND_RFO/
+OFFCORE_REQUESTS.ALL_DATA_RD:Demand and prefetch data reads
+cpu/umask=0x08,event=0xB0,name=OFFCORE_REQUESTS.ALL_DATA_RD/
+OFFCORE_REQUESTS_BUFFER.SQ_FULL:Offcore requests buffer cannot take more entries for this thread core.
+cpu/umask=0x01,event=0xb2,name=OFFCORE_REQUESTS_BUFFER.SQ_FULL/
+OFFCORE_RESPONSE:Offcore response can be programmed only with a specific pair of event select and counter MSR, and with specific event codes and predefine mask bit value in a dedicated MSR to specify attributes of the offcore transaction.
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE/
+OFFCORE_RESPONSE.ALL_REQUESTS.LLC_MISS.ANY_RESPONSE:Counts all requests miss in the L3 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_REQUESTS.LLC_MISS.ANY_RESPONSE,offcore_rsp=0x3FBFC08FFF/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_REQUESTS.LLC_MISS.ANY_RESPONSE,offcore_rsp=0x3FBFC08FFF/
+OFFCORE_RESPONSE.ALL_REQUESTS.LLC_HIT.ANY_RESPONSE:Counts all requests hit in the L3 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_REQUESTS.LLC_HIT.ANY_RESPONSE,offcore_rsp=0x3F803C8FFF/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_REQUESTS.LLC_HIT.ANY_RESPONSE,offcore_rsp=0x3F803C8FFF/
+OFFCORE_RESPONSE.ALL_READS.LLC_MISS.REMOTE_HIT_FORWARD:Counts all data/code/rfo reads (demand & prefetch) miss the L3 and clean or shared data is transferred from remote cache 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_READS.LLC_MISS.REMOTE_HIT_FORWARD,offcore_rsp=0x087FC007F7/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_READS.LLC_MISS.REMOTE_HIT_FORWARD,offcore_rsp=0x087FC007F7/
+OFFCORE_RESPONSE.ALL_READS.LLC_MISS.REMOTE_HITM:Counts all data/code/rfo reads (demand & prefetch) miss the L3 and the modified data is transferred from remote cache 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_READS.LLC_MISS.REMOTE_HITM,offcore_rsp=0x103FC007F7/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_READS.LLC_MISS.REMOTE_HITM,offcore_rsp=0x103FC007F7/
+OFFCORE_RESPONSE.ALL_READS.LLC_MISS.REMOTE_DRAM:Counts all data/code/rfo reads (demand & prefetch) miss the L3 and the data is returned from remote dram 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_READS.LLC_MISS.REMOTE_DRAM,offcore_rsp=0x063BC007F7/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_READS.LLC_MISS.REMOTE_DRAM,offcore_rsp=0x063BC007F7/
+OFFCORE_RESPONSE.ALL_READS.LLC_MISS.LOCAL_DRAM:Counts all data/code/rfo reads (demand & prefetch) miss the L3 and the data is returned from local dram 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_READS.LLC_MISS.LOCAL_DRAM,offcore_rsp=0x06040007F7/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_READS.LLC_MISS.LOCAL_DRAM,offcore_rsp=0x06040007F7/
+OFFCORE_RESPONSE.ALL_READS.LLC_MISS.ANY_RESPONSE:Counts all data/code/rfo reads (demand & prefetch) miss in the L3 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_READS.LLC_MISS.ANY_RESPONSE,offcore_rsp=0x3FBFC007F7/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_READS.LLC_MISS.ANY_RESPONSE,offcore_rsp=0x3FBFC007F7/
+OFFCORE_RESPONSE.ALL_READS.LLC_HIT.HITM_OTHER_CORE:Counts all data/code/rfo reads (demand & prefetch) hit in the L3 and the snoop to one of the sibling cores hits the line in M state and the line is forwarded 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_READS.LLC_HIT.HITM_OTHER_CORE,offcore_rsp=0x10003C07F7/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_READS.LLC_HIT.HITM_OTHER_CORE,offcore_rsp=0x10003C07F7/
+OFFCORE_RESPONSE.ALL_READS.LLC_HIT.HIT_OTHER_CORE_NO_FWD:Counts all data/code/rfo reads (demand & prefetch) hit in the L3 and the snoops to sibling cores hit in either E/S state and the line is not forwarded 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_READS.LLC_HIT.HIT_OTHER_CORE_NO_FWD,offcore_rsp=0x04003C07F7/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_READS.LLC_HIT.HIT_OTHER_CORE_NO_FWD,offcore_rsp=0x04003C07F7/
+OFFCORE_RESPONSE.ALL_CODE_RD.LLC_MISS.LOCAL_DRAM:Counts all demand & prefetch code reads miss the L3 and the data is returned from local dram 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_CODE_RD.LLC_MISS.LOCAL_DRAM,offcore_rsp=0x0604000244/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_CODE_RD.LLC_MISS.LOCAL_DRAM,offcore_rsp=0x0604000244/
+OFFCORE_RESPONSE.ALL_CODE_RD.LLC_MISS.ANY_RESPONSE:Counts all demand & prefetch code reads miss in the L3 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_CODE_RD.LLC_MISS.ANY_RESPONSE,offcore_rsp=0x3FBFC00244/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_CODE_RD.LLC_MISS.ANY_RESPONSE,offcore_rsp=0x3FBFC00244/
+OFFCORE_RESPONSE.ALL_CODE_RD.LLC_HIT.HIT_OTHER_CORE_NO_FWD:Counts all demand & prefetch code reads hit in the L3 and the snoops to sibling cores hit in either E/S state and the line is not forwarded 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_CODE_RD.LLC_HIT.HIT_OTHER_CORE_NO_FWD,offcore_rsp=0x04003C0244/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_CODE_RD.LLC_HIT.HIT_OTHER_CORE_NO_FWD,offcore_rsp=0x04003C0244/
+OFFCORE_RESPONSE.ALL_RFO.LLC_MISS.LOCAL_DRAM:Counts all demand & prefetch RFOs miss the L3 and the data is returned from local dram 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_RFO.LLC_MISS.LOCAL_DRAM,offcore_rsp=0x0604000122/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_RFO.LLC_MISS.LOCAL_DRAM,offcore_rsp=0x0604000122/
+OFFCORE_RESPONSE.ALL_RFO.LLC_MISS.ANY_RESPONSE:Counts all demand & prefetch RFOs miss in the L3 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_RFO.LLC_MISS.ANY_RESPONSE,offcore_rsp=0x3FBFC00122/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_RFO.LLC_MISS.ANY_RESPONSE,offcore_rsp=0x3FBFC00122/
+OFFCORE_RESPONSE.ALL_RFO.LLC_HIT.HITM_OTHER_CORE:Counts all demand & prefetch RFOs hit in the L3 and the snoop to one of the sibling cores hits the line in M state and the line is forwarded 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_RFO.LLC_HIT.HITM_OTHER_CORE,offcore_rsp=0x10003C0122/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_RFO.LLC_HIT.HITM_OTHER_CORE,offcore_rsp=0x10003C0122/
+OFFCORE_RESPONSE.ALL_RFO.LLC_HIT.HIT_OTHER_CORE_NO_FWD:Counts all demand & prefetch RFOs hit in the L3 and the snoops to sibling cores hit in either E/S state and the line is not forwarded 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_RFO.LLC_HIT.HIT_OTHER_CORE_NO_FWD,offcore_rsp=0x04003C0122/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_RFO.LLC_HIT.HIT_OTHER_CORE_NO_FWD,offcore_rsp=0x04003C0122/
+OFFCORE_RESPONSE.ALL_DATA_RD.LLC_MISS.REMOTE_HIT_FORWARD:Counts all demand & prefetch data reads miss the L3 and clean or shared data is transferred from remote cache 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_DATA_RD.LLC_MISS.REMOTE_HIT_FORWARD,offcore_rsp=0x087FC00091/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_DATA_RD.LLC_MISS.REMOTE_HIT_FORWARD,offcore_rsp=0x087FC00091/
+OFFCORE_RESPONSE.ALL_DATA_RD.LLC_MISS.REMOTE_HITM:Counts all demand & prefetch data reads miss the L3 and the modified data is transferred from remote cache 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_DATA_RD.LLC_MISS.REMOTE_HITM,offcore_rsp=0x103FC00091/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_DATA_RD.LLC_MISS.REMOTE_HITM,offcore_rsp=0x103FC00091/
+OFFCORE_RESPONSE.ALL_DATA_RD.LLC_MISS.REMOTE_DRAM:Counts all demand & prefetch data reads miss the L3 and the data is returned from remote dram 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_DATA_RD.LLC_MISS.REMOTE_DRAM,offcore_rsp=0x063BC00091/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_DATA_RD.LLC_MISS.REMOTE_DRAM,offcore_rsp=0x063BC00091/
+OFFCORE_RESPONSE.ALL_DATA_RD.LLC_MISS.LOCAL_DRAM:Counts all demand & prefetch data reads miss the L3 and the data is returned from local dram 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_DATA_RD.LLC_MISS.LOCAL_DRAM,offcore_rsp=0x0604000091/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_DATA_RD.LLC_MISS.LOCAL_DRAM,offcore_rsp=0x0604000091/
+OFFCORE_RESPONSE.ALL_DATA_RD.LLC_MISS.ANY_RESPONSE:Counts all demand & prefetch data reads miss in the L3 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_DATA_RD.LLC_MISS.ANY_RESPONSE,offcore_rsp=0x3FBFC00091/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_DATA_RD.LLC_MISS.ANY_RESPONSE,offcore_rsp=0x3FBFC00091/
+OFFCORE_RESPONSE.ALL_DATA_RD.LLC_HIT.HITM_OTHER_CORE:Counts all demand & prefetch data reads hit in the L3 and the snoop to one of the sibling cores hits the line in M state and the line is forwarded 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_DATA_RD.LLC_HIT.HITM_OTHER_CORE,offcore_rsp=0x10003C0091/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_DATA_RD.LLC_HIT.HITM_OTHER_CORE,offcore_rsp=0x10003C0091/
+OFFCORE_RESPONSE.ALL_DATA_RD.LLC_HIT.HIT_OTHER_CORE_NO_FWD:Counts all demand & prefetch data reads hit in the L3 and the snoops to sibling cores hit in either E/S state and the line is not forwarded 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_DATA_RD.LLC_HIT.HIT_OTHER_CORE_NO_FWD,offcore_rsp=0x04003C0091/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_DATA_RD.LLC_HIT.HIT_OTHER_CORE_NO_FWD,offcore_rsp=0x04003C0091/
+OFFCORE_RESPONSE.PF_LLC_CODE_RD.LLC_MISS.ANY_RESPONSE:Counts prefetch (that bring data to LLC only) code reads miss in the L3 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.PF_LLC_CODE_RD.LLC_MISS.ANY_RESPONSE,offcore_rsp=0x3FBFC00200/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.PF_LLC_CODE_RD.LLC_MISS.ANY_RESPONSE,offcore_rsp=0x3FBFC00200/
+OFFCORE_RESPONSE.PF_LLC_CODE_RD.LLC_HIT.ANY_RESPONSE:Counts prefetch (that bring data to LLC only) code reads hit in the L3 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.PF_LLC_CODE_RD.LLC_HIT.ANY_RESPONSE,offcore_rsp=0x3F803C0200/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.PF_LLC_CODE_RD.LLC_HIT.ANY_RESPONSE,offcore_rsp=0x3F803C0200/
+OFFCORE_RESPONSE.PF_LLC_RFO.LLC_MISS.ANY_RESPONSE:Counts all prefetch (that bring data to LLC only) RFOs miss in the L3 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.PF_LLC_RFO.LLC_MISS.ANY_RESPONSE,offcore_rsp=0x3FBFC00100/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.PF_LLC_RFO.LLC_MISS.ANY_RESPONSE,offcore_rsp=0x3FBFC00100/
+OFFCORE_RESPONSE.PF_LLC_RFO.LLC_HIT.ANY_RESPONSE:Counts all prefetch (that bring data to LLC only) RFOs hit in the L3 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.PF_LLC_RFO.LLC_HIT.ANY_RESPONSE,offcore_rsp=0x3F803C0100/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.PF_LLC_RFO.LLC_HIT.ANY_RESPONSE,offcore_rsp=0x3F803C0100/
+OFFCORE_RESPONSE.DEMAND_RFO.LLC_MISS.REMOTE_HITM:Counts all demand data writes (RFOs) miss the L3 and the modified data is transferred from remote cache 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.DEMAND_RFO.LLC_MISS.REMOTE_HITM,offcore_rsp=0x103FC00002/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.DEMAND_RFO.LLC_MISS.REMOTE_HITM,offcore_rsp=0x103FC00002/
+OFFCORE_RESPONSE.DEMAND_RFO.LLC_MISS.ANY_RESPONSE:Counts all demand data writes (RFOs) miss in the L3 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.DEMAND_RFO.LLC_MISS.ANY_RESPONSE,offcore_rsp=0x3FBFC00002/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.DEMAND_RFO.LLC_MISS.ANY_RESPONSE,offcore_rsp=0x3FBFC00002/
+OFFCORE_RESPONSE.DEMAND_RFO.LLC_HIT.HITM_OTHER_CORE:Counts all demand data writes (RFOs) hit in the L3 and the snoop to one of the sibling cores hits the line in M state and the line is forwarded 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.DEMAND_RFO.LLC_HIT.HITM_OTHER_CORE,offcore_rsp=0x10003C0002/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.DEMAND_RFO.LLC_HIT.HITM_OTHER_CORE,offcore_rsp=0x10003C0002/
+OFFCORE_RESPONSE.DEMAND_RFO.LLC_HIT.ANY_RESPONSE:Counts all demand data writes (RFOs) hit in the L3 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.DEMAND_RFO.LLC_HIT.ANY_RESPONSE,offcore_rsp=0x3F803C0002/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.DEMAND_RFO.LLC_HIT.ANY_RESPONSE,offcore_rsp=0x3F803C0002/
+
+
+
+Event to query (empty enter to quit):core
+OFFCORE_REQUESTS_OUTSTANDING.DEMAND_DATA_RD:Offcore outstanding Demand Data Read transactions in uncore queue.
+cpu/umask=0x01,event=0x60,name=OFFCORE_REQUESTS_OUTSTANDING.DEMAND_DATA_RD/
+OFFCORE_REQUESTS_OUTSTANDING.CYCLES_WITH_DEMAND_DATA_RD:Cycles when offcore outstanding Demand Data Read transactions are present in SuperQueue (SQ), queue to uncore
+cpu/umask=0x01,event=0x60,name=OFFCORE_REQUESTS_OUTSTANDING.CYCLES_WITH_DEMAND_DATA_RD,cmask=1/
+OFFCORE_REQUESTS_OUTSTANDING.DEMAND_DATA_RD_GE_6:Cycles with at least 6 offcore outstanding Demand Data Read transactions in uncore queue.
+cpu/umask=0x01,event=0x60,name=OFFCORE_REQUESTS_OUTSTANDING.DEMAND_DATA_RD_GE_6,offcore_rsp=0x00,cmask=6/
+OFFCORE_REQUESTS_OUTSTANDING.DEMAND_CODE_RD:Offcore outstanding code reads transactions in SuperQueue (SQ), queue to uncore, every cycle
+cpu/umask=0x02,event=0x60,name=OFFCORE_REQUESTS_OUTSTANDING.DEMAND_CODE_RD/
+OFFCORE_REQUESTS_OUTSTANDING.DEMAND_RFO:Offcore outstanding RFO store transactions in SuperQueue (SQ), queue to uncore
+cpu/umask=0x04,event=0x60,name=OFFCORE_REQUESTS_OUTSTANDING.DEMAND_RFO/
+OFFCORE_REQUESTS_OUTSTANDING.CYCLES_WITH_DEMAND_RFO:Offcore outstanding demand rfo reads transactions in SuperQueue (SQ), queue to uncore, every cycle
+cpu/umask=0x04,event=0x60,name=OFFCORE_REQUESTS_OUTSTANDING.CYCLES_WITH_DEMAND_RFO,cmask=1/
+OFFCORE_REQUESTS_OUTSTANDING.ALL_DATA_RD:Offcore outstanding cacheable Core Data Read transactions in SuperQueue (SQ), queue to uncore
+cpu/umask=0x08,event=0x60,name=OFFCORE_REQUESTS_OUTSTANDING.ALL_DATA_RD/
+OFFCORE_REQUESTS_OUTSTANDING.CYCLES_WITH_DATA_RD:Cycles when offcore outstanding cacheable Core Data Read transactions are present in SuperQueue (SQ), queue to uncore
+cpu/umask=0x08,event=0x60,name=OFFCORE_REQUESTS_OUTSTANDING.CYCLES_WITH_DATA_RD,cmask=1/
+IDQ_UOPS_NOT_DELIVERED.CORE:Uops not delivered to Resource Allocation Table (RAT) per thread when backend of the machine is not stalled
+cpu/umask=0x01,event=0x9C,name=IDQ_UOPS_NOT_DELIVERED.CORE/
+IDQ_UOPS_NOT_DELIVERED.CYCLES_0_UOPS_DELIV.CORE:Cycles per thread when 4 or more uops are not delivered to Resource Allocation Table (RAT) when backend of the machine is not stalled
+cpu/umask=0x01,event=0x9C,name=IDQ_UOPS_NOT_DELIVERED.CYCLES_0_UOPS_DELIV.CORE,cmask=4/
+IDQ_UOPS_NOT_DELIVERED.CYCLES_LE_1_UOP_DELIV.CORE:Cycles per thread when 3 or more uops are not delivered to Resource Allocation Table (RAT) when backend of the machine is not stalled
+cpu/umask=0x01,event=0x9C,name=IDQ_UOPS_NOT_DELIVERED.CYCLES_LE_1_UOP_DELIV.CORE,cmask=3/
+IDQ_UOPS_NOT_DELIVERED.CYCLES_LE_2_UOP_DELIV.CORE:Cycles with less than 2 uops delivered by the front end.
+cpu/umask=0x01,event=0x9C,name=IDQ_UOPS_NOT_DELIVERED.CYCLES_LE_2_UOP_DELIV.CORE,cmask=2/
+IDQ_UOPS_NOT_DELIVERED.CYCLES_LE_3_UOP_DELIV.CORE:Cycles with less than 3 uops delivered by the front end.
+cpu/umask=0x01,event=0x9C,name=IDQ_UOPS_NOT_DELIVERED.CYCLES_LE_3_UOP_DELIV.CORE,cmask=1/
+UOPS_EXECUTED_PORT.PORT_0_CORE:Cycles per core when uops are exectuted in port 0.
+cpu/umask=0x01,event=0xA1,name=UOPS_EXECUTED_PORT.PORT_0_CORE,any=1/
+UOPS_EXECUTED_PORT.PORT_1_CORE:Cycles per core when uops are exectuted in port 1.
+cpu/umask=0x02,event=0xA1,name=UOPS_EXECUTED_PORT.PORT_1_CORE,any=1/
+UOPS_EXECUTED_PORT.PORT_2_CORE:Cycles per core when uops are dispatched to port 2.
+cpu/umask=0x04,event=0xA1,name=UOPS_EXECUTED_PORT.PORT_2_CORE,any=1/
+UOPS_EXECUTED_PORT.PORT_3_CORE:Cycles per core when uops are dispatched to port 3.
+cpu/umask=0x08,event=0xA1,name=UOPS_EXECUTED_PORT.PORT_3_CORE,any=1/
+UOPS_EXECUTED_PORT.PORT_4_CORE:Cycles per core when uops are exectuted in port 4.
+cpu/umask=0x10,event=0xA1,name=UOPS_EXECUTED_PORT.PORT_4_CORE,any=1/
+UOPS_EXECUTED_PORT.PORT_5_CORE:Cycles per core when uops are exectuted in port 5.
+cpu/umask=0x20,event=0xA1,name=UOPS_EXECUTED_PORT.PORT_5_CORE,any=1/
+UOPS_EXECUTED_PORT.PORT_6_CORE:Cycles per core when uops are exectuted in port 6.
+cpu/umask=0x40,event=0xA1,name=UOPS_EXECUTED_PORT.PORT_6_CORE,any=1/
+UOPS_EXECUTED_PORT.PORT_7_CORE:Cycles per core when uops are dispatched to port 7.
+cpu/umask=0x80,event=0xA1,name=UOPS_EXECUTED_PORT.PORT_7_CORE,any=1/
+OFFCORE_REQUESTS.DEMAND_DATA_RD:Demand Data Read requests sent to uncore
+cpu/umask=0x01,event=0xB0,name=OFFCORE_REQUESTS.DEMAND_DATA_RD/
+OFFCORE_REQUESTS.DEMAND_CODE_RD:Cacheable and noncachaeble code read requests
+cpu/umask=0x02,event=0xB0,name=OFFCORE_REQUESTS.DEMAND_CODE_RD/
+OFFCORE_REQUESTS.DEMAND_RFO:Demand RFO requests including regular RFOs, locks, ItoM
+cpu/umask=0x04,event=0xB0,name=OFFCORE_REQUESTS.DEMAND_RFO/
+OFFCORE_REQUESTS.ALL_DATA_RD:Demand and prefetch data reads
+cpu/umask=0x08,event=0xB0,name=OFFCORE_REQUESTS.ALL_DATA_RD/
+UOPS_EXECUTED.CORE:Number of uops executed on the core.
+cpu/umask=0x02,event=0xB1,name=UOPS_EXECUTED.CORE/
+UOPS_EXECUTED.CORE_CYCLES_GE_1:Cycles at least 1 micro-op is executed from any thread on physical core.
+cpu/umask=0x02,event=0xb1,name=UOPS_EXECUTED.CORE_CYCLES_GE_1,cmask=1/
+UOPS_EXECUTED.CORE_CYCLES_GE_2:Cycles at least 2 micro-op is executed from any thread on physical core.
+cpu/umask=0x02,event=0xb1,name=UOPS_EXECUTED.CORE_CYCLES_GE_2,cmask=2/
+UOPS_EXECUTED.CORE_CYCLES_GE_3:Cycles at least 3 micro-op is executed from any thread on physical core.
+cpu/umask=0x02,event=0xb1,name=UOPS_EXECUTED.CORE_CYCLES_GE_3,cmask=3/
+UOPS_EXECUTED.CORE_CYCLES_GE_4:Cycles at least 4 micro-op is executed from any thread on physical core.
+cpu/umask=0x02,event=0xb1,name=UOPS_EXECUTED.CORE_CYCLES_GE_4,cmask=4/
+UOPS_EXECUTED.CORE_CYCLES_NONE:Cycles with no micro-ops executed from any thread on physical core.
+cpu/umask=0x02,event=0xb1,name=UOPS_EXECUTED.CORE_CYCLES_NONE,inv=1/
+OFFCORE_REQUESTS_BUFFER.SQ_FULL:Offcore requests buffer cannot take more entries for this thread core.
+cpu/umask=0x01,event=0xb2,name=OFFCORE_REQUESTS_BUFFER.SQ_FULL/
+OFFCORE_RESPONSE:Offcore response can be programmed only with a specific pair of event select and counter MSR, and with specific event codes and predefine mask bit value in a dedicated MSR to specify attributes of the offcore transaction.
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE/
+OFFCORE_RESPONSE.ALL_REQUESTS.LLC_MISS.ANY_RESPONSE:Counts all requests miss in the L3 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_REQUESTS.LLC_MISS.ANY_RESPONSE,offcore_rsp=0x3FBFC08FFF/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_REQUESTS.LLC_MISS.ANY_RESPONSE,offcore_rsp=0x3FBFC08FFF/
+OFFCORE_RESPONSE.ALL_REQUESTS.LLC_HIT.ANY_RESPONSE:Counts all requests hit in the L3 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_REQUESTS.LLC_HIT.ANY_RESPONSE,offcore_rsp=0x3F803C8FFF/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_REQUESTS.LLC_HIT.ANY_RESPONSE,offcore_rsp=0x3F803C8FFF/
+OFFCORE_RESPONSE.ALL_READS.LLC_MISS.REMOTE_HIT_FORWARD:Counts all data/code/rfo reads (demand & prefetch) miss the L3 and clean or shared data is transferred from remote cache 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_READS.LLC_MISS.REMOTE_HIT_FORWARD,offcore_rsp=0x087FC007F7/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_READS.LLC_MISS.REMOTE_HIT_FORWARD,offcore_rsp=0x087FC007F7/
+OFFCORE_RESPONSE.ALL_READS.LLC_MISS.REMOTE_HITM:Counts all data/code/rfo reads (demand & prefetch) miss the L3 and the modified data is transferred from remote cache 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_READS.LLC_MISS.REMOTE_HITM,offcore_rsp=0x103FC007F7/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_READS.LLC_MISS.REMOTE_HITM,offcore_rsp=0x103FC007F7/
+OFFCORE_RESPONSE.ALL_READS.LLC_MISS.REMOTE_DRAM:Counts all data/code/rfo reads (demand & prefetch) miss the L3 and the data is returned from remote dram 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_READS.LLC_MISS.REMOTE_DRAM,offcore_rsp=0x063BC007F7/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_READS.LLC_MISS.REMOTE_DRAM,offcore_rsp=0x063BC007F7/
+OFFCORE_RESPONSE.ALL_READS.LLC_MISS.LOCAL_DRAM:Counts all data/code/rfo reads (demand & prefetch) miss the L3 and the data is returned from local dram 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_READS.LLC_MISS.LOCAL_DRAM,offcore_rsp=0x06040007F7/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_READS.LLC_MISS.LOCAL_DRAM,offcore_rsp=0x06040007F7/
+OFFCORE_RESPONSE.ALL_READS.LLC_MISS.ANY_RESPONSE:Counts all data/code/rfo reads (demand & prefetch) miss in the L3 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_READS.LLC_MISS.ANY_RESPONSE,offcore_rsp=0x3FBFC007F7/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_READS.LLC_MISS.ANY_RESPONSE,offcore_rsp=0x3FBFC007F7/
+OFFCORE_RESPONSE.ALL_READS.LLC_HIT.HITM_OTHER_CORE:Counts all data/code/rfo reads (demand & prefetch) hit in the L3 and the snoop to one of the sibling cores hits the line in M state and the line is forwarded 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_READS.LLC_HIT.HITM_OTHER_CORE,offcore_rsp=0x10003C07F7/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_READS.LLC_HIT.HITM_OTHER_CORE,offcore_rsp=0x10003C07F7/
+OFFCORE_RESPONSE.ALL_READS.LLC_HIT.HIT_OTHER_CORE_NO_FWD:Counts all data/code/rfo reads (demand & prefetch) hit in the L3 and the snoops to sibling cores hit in either E/S state and the line is not forwarded 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_READS.LLC_HIT.HIT_OTHER_CORE_NO_FWD,offcore_rsp=0x04003C07F7/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_READS.LLC_HIT.HIT_OTHER_CORE_NO_FWD,offcore_rsp=0x04003C07F7/
+OFFCORE_RESPONSE.ALL_CODE_RD.LLC_MISS.LOCAL_DRAM:Counts all demand & prefetch code reads miss the L3 and the data is returned from local dram 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_CODE_RD.LLC_MISS.LOCAL_DRAM,offcore_rsp=0x0604000244/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_CODE_RD.LLC_MISS.LOCAL_DRAM,offcore_rsp=0x0604000244/
+OFFCORE_RESPONSE.ALL_CODE_RD.LLC_MISS.ANY_RESPONSE:Counts all demand & prefetch code reads miss in the L3 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_CODE_RD.LLC_MISS.ANY_RESPONSE,offcore_rsp=0x3FBFC00244/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_CODE_RD.LLC_MISS.ANY_RESPONSE,offcore_rsp=0x3FBFC00244/
+OFFCORE_RESPONSE.ALL_CODE_RD.LLC_HIT.HIT_OTHER_CORE_NO_FWD:Counts all demand & prefetch code reads hit in the L3 and the snoops to sibling cores hit in either E/S state and the line is not forwarded 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_CODE_RD.LLC_HIT.HIT_OTHER_CORE_NO_FWD,offcore_rsp=0x04003C0244/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_CODE_RD.LLC_HIT.HIT_OTHER_CORE_NO_FWD,offcore_rsp=0x04003C0244/
+OFFCORE_RESPONSE.ALL_RFO.LLC_MISS.LOCAL_DRAM:Counts all demand & prefetch RFOs miss the L3 and the data is returned from local dram 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_RFO.LLC_MISS.LOCAL_DRAM,offcore_rsp=0x0604000122/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_RFO.LLC_MISS.LOCAL_DRAM,offcore_rsp=0x0604000122/
+OFFCORE_RESPONSE.ALL_RFO.LLC_MISS.ANY_RESPONSE:Counts all demand & prefetch RFOs miss in the L3 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_RFO.LLC_MISS.ANY_RESPONSE,offcore_rsp=0x3FBFC00122/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_RFO.LLC_MISS.ANY_RESPONSE,offcore_rsp=0x3FBFC00122/
+OFFCORE_RESPONSE.ALL_RFO.LLC_HIT.HITM_OTHER_CORE:Counts all demand & prefetch RFOs hit in the L3 and the snoop to one of the sibling cores hits the line in M state and the line is forwarded 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_RFO.LLC_HIT.HITM_OTHER_CORE,offcore_rsp=0x10003C0122/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_RFO.LLC_HIT.HITM_OTHER_CORE,offcore_rsp=0x10003C0122/
+OFFCORE_RESPONSE.ALL_RFO.LLC_HIT.HIT_OTHER_CORE_NO_FWD:Counts all demand & prefetch RFOs hit in the L3 and the snoops to sibling cores hit in either E/S state and the line is not forwarded 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_RFO.LLC_HIT.HIT_OTHER_CORE_NO_FWD,offcore_rsp=0x04003C0122/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_RFO.LLC_HIT.HIT_OTHER_CORE_NO_FWD,offcore_rsp=0x04003C0122/
+OFFCORE_RESPONSE.ALL_DATA_RD.LLC_MISS.REMOTE_HIT_FORWARD:Counts all demand & prefetch data reads miss the L3 and clean or shared data is transferred from remote cache 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_DATA_RD.LLC_MISS.REMOTE_HIT_FORWARD,offcore_rsp=0x087FC00091/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_DATA_RD.LLC_MISS.REMOTE_HIT_FORWARD,offcore_rsp=0x087FC00091/
+OFFCORE_RESPONSE.ALL_DATA_RD.LLC_MISS.REMOTE_HITM:Counts all demand & prefetch data reads miss the L3 and the modified data is transferred from remote cache 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_DATA_RD.LLC_MISS.REMOTE_HITM,offcore_rsp=0x103FC00091/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_DATA_RD.LLC_MISS.REMOTE_HITM,offcore_rsp=0x103FC00091/
+OFFCORE_RESPONSE.ALL_DATA_RD.LLC_MISS.REMOTE_DRAM:Counts all demand & prefetch data reads miss the L3 and the data is returned from remote dram 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_DATA_RD.LLC_MISS.REMOTE_DRAM,offcore_rsp=0x063BC00091/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_DATA_RD.LLC_MISS.REMOTE_DRAM,offcore_rsp=0x063BC00091/
+OFFCORE_RESPONSE.ALL_DATA_RD.LLC_MISS.LOCAL_DRAM:Counts all demand & prefetch data reads miss the L3 and the data is returned from local dram 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_DATA_RD.LLC_MISS.LOCAL_DRAM,offcore_rsp=0x0604000091/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_DATA_RD.LLC_MISS.LOCAL_DRAM,offcore_rsp=0x0604000091/
+OFFCORE_RESPONSE.ALL_DATA_RD.LLC_MISS.ANY_RESPONSE:Counts all demand & prefetch data reads miss in the L3 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_DATA_RD.LLC_MISS.ANY_RESPONSE,offcore_rsp=0x3FBFC00091/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_DATA_RD.LLC_MISS.ANY_RESPONSE,offcore_rsp=0x3FBFC00091/
+OFFCORE_RESPONSE.ALL_DATA_RD.LLC_HIT.HITM_OTHER_CORE:Counts all demand & prefetch data reads hit in the L3 and the snoop to one of the sibling cores hits the line in M state and the line is forwarded 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_DATA_RD.LLC_HIT.HITM_OTHER_CORE,offcore_rsp=0x10003C0091/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_DATA_RD.LLC_HIT.HITM_OTHER_CORE,offcore_rsp=0x10003C0091/
+OFFCORE_RESPONSE.ALL_DATA_RD.LLC_HIT.HIT_OTHER_CORE_NO_FWD:Counts all demand & prefetch data reads hit in the L3 and the snoops to sibling cores hit in either E/S state and the line is not forwarded 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.ALL_DATA_RD.LLC_HIT.HIT_OTHER_CORE_NO_FWD,offcore_rsp=0x04003C0091/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.ALL_DATA_RD.LLC_HIT.HIT_OTHER_CORE_NO_FWD,offcore_rsp=0x04003C0091/
+OFFCORE_RESPONSE.PF_LLC_CODE_RD.LLC_MISS.ANY_RESPONSE:Counts prefetch (that bring data to LLC only) code reads miss in the L3 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.PF_LLC_CODE_RD.LLC_MISS.ANY_RESPONSE,offcore_rsp=0x3FBFC00200/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.PF_LLC_CODE_RD.LLC_MISS.ANY_RESPONSE,offcore_rsp=0x3FBFC00200/
+OFFCORE_RESPONSE.PF_LLC_CODE_RD.LLC_HIT.ANY_RESPONSE:Counts prefetch (that bring data to LLC only) code reads hit in the L3 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.PF_LLC_CODE_RD.LLC_HIT.ANY_RESPONSE,offcore_rsp=0x3F803C0200/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.PF_LLC_CODE_RD.LLC_HIT.ANY_RESPONSE,offcore_rsp=0x3F803C0200/
+OFFCORE_RESPONSE.PF_LLC_RFO.LLC_MISS.ANY_RESPONSE:Counts all prefetch (that bring data to LLC only) RFOs miss in the L3 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.PF_LLC_RFO.LLC_MISS.ANY_RESPONSE,offcore_rsp=0x3FBFC00100/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.PF_LLC_RFO.LLC_MISS.ANY_RESPONSE,offcore_rsp=0x3FBFC00100/
+OFFCORE_RESPONSE.PF_LLC_RFO.LLC_HIT.ANY_RESPONSE:Counts all prefetch (that bring data to LLC only) RFOs hit in the L3 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.PF_LLC_RFO.LLC_HIT.ANY_RESPONSE,offcore_rsp=0x3F803C0100/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.PF_LLC_RFO.LLC_HIT.ANY_RESPONSE,offcore_rsp=0x3F803C0100/
+OFFCORE_RESPONSE.DEMAND_RFO.LLC_MISS.REMOTE_HITM:Counts all demand data writes (RFOs) miss the L3 and the modified data is transferred from remote cache 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.DEMAND_RFO.LLC_MISS.REMOTE_HITM,offcore_rsp=0x103FC00002/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.DEMAND_RFO.LLC_MISS.REMOTE_HITM,offcore_rsp=0x103FC00002/
+OFFCORE_RESPONSE.DEMAND_RFO.LLC_MISS.ANY_RESPONSE:Counts all demand data writes (RFOs) miss in the L3 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.DEMAND_RFO.LLC_MISS.ANY_RESPONSE,offcore_rsp=0x3FBFC00002/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.DEMAND_RFO.LLC_MISS.ANY_RESPONSE,offcore_rsp=0x3FBFC00002/
+OFFCORE_RESPONSE.DEMAND_RFO.LLC_HIT.HITM_OTHER_CORE:Counts all demand data writes (RFOs) hit in the L3 and the snoop to one of the sibling cores hits the line in M state and the line is forwarded 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.DEMAND_RFO.LLC_HIT.HITM_OTHER_CORE,offcore_rsp=0x10003C0002/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.DEMAND_RFO.LLC_HIT.HITM_OTHER_CORE,offcore_rsp=0x10003C0002/
+OFFCORE_RESPONSE.DEMAND_RFO.LLC_HIT.ANY_RESPONSE:Counts all demand data writes (RFOs) hit in the L3 
+cpu/umask=0x01,event=0xB7,name=OFFCORE_RESPONSE.DEMAND_RFO.LLC_HIT.ANY_RESPONSE,offcore_rsp=0x3F803C0002/
+cpu/umask=0x01,event=0xBB,name=OFFCORE_RESPONSE.DEMAND_RFO.LLC_HIT.ANY_RESPONSE,offcore_rsp=0x3F803C0002/
+
