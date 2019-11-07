@@ -1,0 +1,5 @@
+# This program runs only on Intel architecture. #
+
+# You must have root permission #
+chmod 0755 start.sh
+./start.sh

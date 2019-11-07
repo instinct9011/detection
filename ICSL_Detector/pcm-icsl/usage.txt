@@ -1,0 +1,12 @@
+# Intel PCM revised code.
+# Revised by JongHyeon Cho in kwangwoon uni. 2019
+
+usage: * You must have root permission
+./pcm-icsl.x -e icsl
+  --> start PCM command line version. must have '-e icsl' option.
+
+./pcm-icsl.x 0.05 -e icsl -csv=../log.csv
+  --> every 0.05 sec, write counter at log.csv
+
+
+
